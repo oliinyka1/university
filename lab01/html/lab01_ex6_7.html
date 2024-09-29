@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 6-7</title>
+    <link rel="stylesheet" href="../lab01.css">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    <a href="../lab01.html" class="button top-right-button">Go to lab01</a>
+    <div class="container">
+        <div class="task" id="task6">
+            <h2>Task 6-7: Product Inventory</h2>
+            
+            <input type="text" id="myInput" name="item" placeholder="Enter item name">
+            <br>
+            
+            <select id="items">
+                <option value="" disabled selected>Choose item</option>
+                <option value="Apple">Apple</option>
+                <option value="Axe">Axe</option>
+                <option value="Orange">Orange</option>
+                <option value="Oil">Oyster</option>
+                <option value="Onion">Onion</option>
+            </select>
+            <input type="button" value="Available Quantity and Price" onclick="getProductInfo()">
+            <input type="button" value="Total Sum" onclick="calculateTotal()">
+            <p>Quantity: <span id="productQuantity"></span></p>
+            <p>Price: <span id="productPrice"></span></p>
+            <p>Total: <span id="productTotal"></span></p>
+        </div>
+    </div>
+    
+    <script src="../lab01.js"></script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1-5</title>
+    <link rel="stylesheet" href="../lab01.css">
+    <link rel="stylesheet" href="../../style.css">
+</head>
+<body>
+    
+    <a href="../lab01.html" class="button top-right-button">Go to lab01</a>
+
+    <div class="container">
+        <h1>JavaScript Tasks</h1>
+
+        <div class="task" id="task1">
+            <h2>Task 1: Basic Information</h2>
+            <p>Student Name: <span id="studentName"></span></p>
+            <input type="button" value="Show Birth Info" onclick="showBirthInfo()">
+        </div>
+
+        <div class="task" id="task2">
+            <h2>Task 2: Arithmetic Operation</h2>
+            <input type="button" value="Calculate" onclick="calculate()">
+        </div>
+
+        <div class="task" id="task3">
+            <h2>Task 3: Event Handling</h2>
+            <form id="form_t3">
+                <input type="text" id="eventInput1" onselect="fun('Item was selected')">
+                <input type="text" id="eventInput2" onmouseout="fun1('2+2=5')">
+            </form>
+        </div>
+
+        <div class="task" id="task4">
+            <h2>Task 4: Conditional Calculation</h2>
+            <input type="text" id="inputX" placeholder="Enter value x">
+            <input type="text" id="inputY" placeholder="Enter value y">
+            <input type="button" value="Calculate" onclick="conditionalCalculate()">
+            <p>Result: <span id="conditionalResult"></span></p>
+        </div>
+
+        <div class="task" id="task5">
+            <h2>Task 5: Series Sum Calculation</h2>
+            <input type="text" id="seriesInputX" placeholder="Enter x">
+            <input type="text" id="seriesInputY" placeholder="Enter y">
+            <input type="button" value="Calculate Sum" onclick="calculateSeriesSum()">
+            <p>Sum: <span id="seriesResult"></span></p>
+        </div>
+
+    </div>
+
+    <script src="../lab01.js"></script>
+</body>
+</html>
