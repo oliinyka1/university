@@ -16,9 +16,6 @@ function calculate() {
 
 // Task 3
 
-document.getElementById("eventInput1").addEventListener("select", function() {fun('Item was selected')});
-document.getElementById("eventInput2").addEventListener("mouseout", function() {fun1('2+2=5')});
-
 function fun(a) {
     document.getElementById("eventInput1").value = `${a}`;
 }
