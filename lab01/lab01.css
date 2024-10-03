@@ -33,14 +33,6 @@ input[type="button"]:hover {
     padding: 10px 20px;
 }
 
-.top-right-button {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    
-    
-}
-
 .button:hover {
     background-color: #0056b3;
 }

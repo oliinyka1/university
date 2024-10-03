@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 2 Tasks</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="lab02.css">
+    
+    
+</head>
+<body>
+    <a href="../index.html" class="button top-right-button">Go to lab list</a>
+    <div class="container">
+        <div class="task">
+            <h2>Task 1: Clock</h2>
+            <div id="clock" onload="updateTime()"></div>
+        </div>
+    
+        <div class="task">
+            <h2>Task 2: Calculator</h2>
+            <div id="calculator">
+                <input type="text" id="display" readonly>
+                <br>
+                <button onclick="appendToDisplay('7')">7</button>
+                <button onclick="appendToDisplay('8')">8</button>
+                <button onclick="appendToDisplay('9')">9</button>
+                <button onclick="appendToDisplay('+')">+</button>
+                <br>
+                <button onclick="appendToDisplay('4')">4</button>
+                <button onclick="appendToDisplay('5')">5</button>
+                <button onclick="appendToDisplay('6')">6</button>
+                <button onclick="appendToDisplay('-')">-</button>
+                <br>
+                <button onclick="appendToDisplay('1')">1</button>
+                <button onclick="appendToDisplay('2')">2</button>
+                <button onclick="appendToDisplay('3')">3</button>
+                <button onclick="appendToDisplay('*')">*</button>
+                <br>
+                <button onclick="appendToDisplay('0')">0</button>
+                <button onclick="appendToDisplay('.')">.</button>
+                <button onclick="calculate()">=</button>
+                <button onclick="appendToDisplay('/')">/</button>
+                <br>
+                <button onclick="clearDisplay()">Clear</button>
+            </div>
+        </div>
+    
+        <div class="task">
+            <h2>Task 3: Dynamic Table</h2>
+            <input type="number" id="rows" placeholder="Number of rows">
+            <input type="number" id="cols" placeholder="Number of columns">
+            <button onclick="createTable()">Create Table</button>
+            <table id="dynamicTable"></table>
+            <div id="sm">Sum = </div>
+        </div>
+    
+        <div class="task">
+            <h2>Task 4: Console.log() Examples</h2>
+            <button onclick="runConsoleLogs()">Run Console.log() Examples</button>
+            <div id="consoleOutput"></div>
+        </div>
+
+        <div class="task">
+            <h2>Task 5: Various Console Methods</h2>
+            <button onclick="runConsoleMethods()">Run Console Methods</button>
+            <div id="consoleOutput2"></div>
+        </div>
+    </div>
+    <script src="lab02.js"></script>
+</body>
+</html>
