@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab03</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="lab03.css">
+</head>
+<body>
+    <a href="../index.html" class="button top-right-button">Go to lab list</a>
+    
+    <div class="task">
+        <h2>Task 1: Geometric Area Calculator</h2>
+        <div id="calculator">
+            <div class="input-group">
+                <label for="length">Diagonal 1:</label>
+                <input type="number" id="d1" oninput="calculateArea()">
+            </div>
+            <div class="input-group">
+                <label for="width">Diagonal 2:</label>
+                <input type="number" id="d2" oninput="calculateArea()">
+            </div>
+            <div class="input-group">
+                <label for="area">Area:</label>
+                <input type="text" id="area" readonly>
+            </div>
+        </div>
+    </div>
+
+    <div class="task">
+        <div id="task2">
+            <h2>Task 2-3: Bilingual Virtual Keyboard</h2>
+        <input type="text" id="display" readonly>
+        <div id="keyboard"></div>
+        <button onclick="clearDisplay()">Clear</button>
+        <button onclick="toggleLanguage()">Alt+Shift</button>
+        </div>
+    </div>
+
+    <div class="task">
+        <div id="task4">
+            <img id="image" src="img/img1.jpg" alt="">
+            <br>
+            <button onclick="changeImage(-1)">Previous</button>
+            <button onclick="changeImage(1)">Next</button>
+        </div>
+    </div>
+
+    <div class="task" id="task5">
+        <h2>Task 5: Arithmetic Quiz</h2>
+        <div id="score">Total score: 0% (0 correct answers out of 0)</div>
+        <div id="question"></div>
+        <input type="number" id="answer">
+        <button onclick="checkAnswer()">Check</button>
+        <button onclick="generateQuestion()">Next Question</button>
+        <div id="result"></div>
+    </div>
+
+    <div class="task" id="task6">
+        <h2>Task 6: Collapsible Tree</h2>
+        <ul id="tree"></ul>
+    </div>
+    
+    <script src="lab03.js"></script>
+</body>
+</html>
