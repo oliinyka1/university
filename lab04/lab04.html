@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab04</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="lab04.css">
+</head>
+<body>
+    <a href="../index.html" class="button top-right-button">Go to lab list</a>
+    <div class="container">
+        <form id="testForm">
+            <!-- Question 1: Radio buttons -->
+            <p>1. What is the capital of France?</p>
+            <label><input type="radio" name="q1" value="Paris"> Paris</label><br>
+            <label><input type="radio" name="q1" value="London"> London</label><br>
+            <label><input type="radio" name="q1" value="Berlin"> Berlin</label><br>
+            <label><input type="radio" name="q1" value="Madrid"> Madrid</label><br>
+            
+            <!-- Question 2: Radio buttons -->
+            <p>2. What is 2 + 2?</p>
+            <label><input type="radio" name="q2" value="3"> 3</label><br>
+            <label><input type="radio" name="q2" value="4"> 4</label><br>
+            <label><input type="radio" name="q2" value="5"> 5</label><br>
+            <label><input type="radio" name="q2" value="6"> 6</label><br>
+            
+            <!-- Question 3: Checkboxes -->
+            <p>3. Select prime numbers:</p>
+            <label><input type="checkbox" name="q3" value="2"> 2</label><br>
+            <label><input type="checkbox" name="q3" value="3"> 3</label><br>
+            <label><input type="checkbox" name="q3" value="4"> 4</label><br>
+            <label><input type="checkbox" name="q3" value="6"> 6</label><br>
+            
+            <!-- Question 4: Checkboxes -->
+            <p>4. Select fruits:</p>
+            <label><input type="checkbox" name="q4" value="Apple"> Apple</label><br>
+            <label><input type="checkbox" name="q4" value="Banana"> Banana</label><br>
+            <label><input type="checkbox" name="q4" value="Carrot"> Carrot</label><br>
+            <label><input type="checkbox" name="q4" value="Broccoli"> Broccoli</label><br>
+            
+            <!-- Question 5: Single select -->
+            <p>5. Choose a programming language:</p>
+            <select name="q5">
+                <option value="Python">Python</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="C++">C++</option>
+                <option value="Java">Java</option>
+            </select>
+            
+            <!-- Question 6: Multi-select -->
+            <p>6. Select web development technologies:</p>
+            <select name="q6" multiple>
+                <option value="HTML">HTML</option>
+                <option value="CSS">CSS</option>
+                <option value="Photoshop">Photoshop</option>
+                <option value="Terraria">Terraria</option>
+            </select>
+            
+            <!-- Question 7: Text field -->
+            <p>7. Enter the square root of 9:</p>
+            <input type="text" name="q7">
+            
+            <br><br>
+            <button type="button" onclick="calculateScore()">Finish Test</button>
+        </form>
+        
+        <div id="result"></div>
+
+    <div id="results"></div>
+
+    </div>
+    <script src="lab04.js"></script>
+</body>
+</html> 
