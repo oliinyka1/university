@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="lab05.css">
+    <title>Lab 05</title>
+</head>
+<body>
+    <a href="../index.html" class="button top-right-button">Go to lab list</a>
+    <div id="tabbed_box_1" class="tabbed_box">
+        <h4>Browse Site <small>Select a Tab</small></h4>
+        <div class="tabbed_area">
+            <ul class="tabs">
+                <li><a href="javascript:tabSwitch('tab_1', 'content_1');" id="tab_1" class="active">Topics</a></li>
+                <li><a href="javascript:tabSwitch('tab_2', 'content_2');" id="tab_2">Archives</a></li>
+                <li><a href="javascript:tabSwitch('tab_3', 'content_3');" id="tab_3">Pages</a></li>
+            </ul>
+
+            <div id="content_1" class="content">
+                <ul>
+                    <li><a href="">HTML Techniques <small>4 Posts</small></a></li>
+                    <li><a href="">CSS Styling <small>32 Posts</small></a></li>
+                    <li><a href="">Flash Tutorials <small>2 Posts</small></a></li>
+                    <li><a href="">Web Miscellanea <small>19 Posts</small></a></li>
+                    <li><a href="">Site News <small>6 Posts</small></a></li>
+                    <li><a href="">Web Development <small>8 Posts</small></a></li>
+                </ul>
+            </div>
+            <div id="content_2" class="content">
+                <ul>
+                    <li><a href="">December 2008 <small>6 Posts</small></a></li>
+                    <li><a href="">November 2008 <small>4 Posts</small></a></li>
+                    <li><a href="">October 2008 <small>22 Posts</small></a></li>
+                    <li><a href="">September 2008 <small>12 Posts</small></a></li>
+                    <li><a href="">August 2008 <small>3 Posts</small></a></li>
+                    <li><a href="">July 2008 <small>1 Posts</small></a></li>
+                </ul>
+            </div>
+            <div id="content_3" class="content">
+                <ul>
+                    <li><a href="">Home</a></li>
+                    <li><a href="">About</a></li>
+                    <li><a href="">Contribute</a></li>
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="menu" class="vertical_menu">
+        <ul class="menu_items">
+            <li class="has-submenu">
+                <a href="javascript:menuSwitch('item_1');" id="item_1"><span class="submenu-indicator">&#9654;</span> Пункт 1</a>
+                <ul class="submenu">
+                    <li><a id="item_1_1">Пункт 1.1</a></li>
+                    <li><a id="item_1_2">Пункт 1.2</a></li>
+                </ul>
+            </li>
+            <li class="has-submenu">
+                <a href="javascript:menuSwitch('item_2');" id="item_2"><span class="submenu-indicator">&#9654;</span> Пункт 2</a>
+                <ul class="submenu">
+                    <li><a id="item_2_1">Пункт 2.1</a></li>
+                    <li class="has-submenu">
+                        <a href="javascript:menuSwitch('item_2_2');" id="item_2_2"><span class="submenu-indicator">&#9654;</span> Пункт 2.2</a>
+                        <ul class="submenu">
+                            <li><a id="item_2_2_1">Пункт 2.2.1</a></li>
+                            <li><a id="item_2_2_2">Пункт 2.2.2</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a id="item_3">Пункт 3</a></li>
+        </ul>
+    </div>
+
+    <script src="lab05.js"></script>
+</body>
+</html>
