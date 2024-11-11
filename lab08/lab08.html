@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Time Lab</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="lab08.css">
+</head>
+<body>
+    <a href="../index.html" class="button top-right-button">Go to lab list</a>
+    <div class="section">
+        <h2>Task 1: Time Operations</h2>
+        <div class="input-group">
+            <button onclick="displayCurrentTime()">Display Current Time</button>
+            <div id="currentTime" class="result"></div>
+        </div>
+        
+        <div class="input-group">
+            <input type="number" id="secondsInput" placeholder="Enter seconds">
+            <button onclick="addSeconds()">Add Seconds</button>
+        </div>
+        
+        <div class="input-group">
+            <input type="number" id="minutesInput" placeholder="Enter minutes">
+            <button onclick="addMinutes()">Add Minutes</button>
+        </div>
+        
+        <div class="input-group">
+            <input type="number" id="hoursInput" placeholder="Enter hours">
+            <button onclick="addHours()">Add Hours</button>
+        </div>
+        
+        <div id="modifiedTime" class="result"></div>
+    </div>
+
+    <div class="section">
+        <h2>Task 2: Date Operations</h2>
+        
+        <div class="input-group">
+            <button onclick="displayCurrentDate()">2.1 Display Current Date</button>
+            <div id="currentDate" class="result"></div>
+        </div>
+        
+        <div class="input-group">
+            <button onclick="setDayInfo()">2.2 Get Day Information</button>
+            <div id="dayInfo" class="result"></div>
+        </div>
+        
+        <div class="input-group">
+            <input type="number" id="daysOffset" placeholder="Enter number of days">
+            <button onclick="calculateDate()">2.3 Calculate Date</button>
+            <div id="calculatedDate" class="result"></div>
+        </div>
+        
+        <div class="input-group">
+            <input type="number" id="yearInput" placeholder="Enter year">
+            <input type="number" id="monthInput" placeholder="Enter month (1-12)">
+            <button onclick="getLastDayOfMonth()">2.4 Get Last Day of Month</button>
+            <div id="lastDay" class="result"></div>
+        </div>
+        
+        <div class="input-group">
+            <button onclick="getSecondsCounts()">2.5 Get Seconds Count</button>
+            <div id="secondsCounts" class="result"></div>
+        </div>
+        
+        <div class="input-group">
+            <input type="text" id="dateString" placeholder="dd.mm.yyyy HH:mm">
+            <button onclick="formatDate()">2.6 Format Date</button>
+            <div id="formattedDate" class="result"></div>
+        </div>
+    </div>
+
+    <script src="lab08.js"></script>
+</body>
+</html>
