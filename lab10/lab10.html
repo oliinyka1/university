@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lab10</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+        .hovered {
+            background-color: lightblue;
+            border: 1px solid blue;
+        }
+        #image {
+            display: none;
+            margin-top: 10px;
+        }
+        #tooltip {
+            display: none;
+            position: absolute;
+            padding: 5px;
+            background-color: rgba(128, 128, 128, 0.238);
+            border-radius: 10px;
+        }
+        #error-message {
+            color: red;
+            display: none;
+        }
+
+        #succeed-message {
+            color: green;
+            display: none;
+        }
+
+        #hide-text {
+            margin-top: 10px;
+            font-weight: bold;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="button top-right-button">Go to lab list</a>
+    <div class="container">
+        <p>First header text</p>
+        <div class="hoverable">hoverable</div>
+        <br>
+
+        <a id="btn" href="#" class="button">Click to show text</a>
+        <div id="hide-text">Hello :3</div>
+
+        <!-- Завдання 3 -->
+        <div id="clickable-div" style="width: 200px; height: 50px; border: 1px solid black; margin-top: 20px;">Click here!</div>
+        <button id="single-click" style="margin-top: 10px;">single-click</button>
+        <button id="double-click" style="margin-top: 10px;">double-click</button>
+
+        <p id="show-image" style="margin-top: 10px; cursor: pointer; color: blue;">Show image</p>
+        <img id="image" src="img.jpg" alt="Demo" style="width: 200px; height: auto;">
+        <div id="tooltip">Winter landscape</div>
+        <p style="margin-top: 50px;">Enter word 'correct' here.</p>
+        <form>
+            <input type="text" placeholder="Введіть слово..." />
+            <input type="submit" value="Перевірити" />
+        </form>
+        <div id="error-message">Incorrect!</div>
+        <div id="succeed-message">Correct!</div>
+    </div>
+    <script>
+            $(document).ready(function () {
+            // Завдання 1: Виведення повідомлення про готовність jQuery
+            alert("Бібліотека jQuery готова до роботи!");
+
+            // Завдання 2: Зміна тексту у першому та останньому абзаці
+            $("p:first").text("DOM first!");
+            $("p:last").text("DOM last!");
+
+            // Додавання стилю при наведенні миші на div
+            $("div.hoverable").hover(
+                function () {
+                    $(this).addClass("hovered");
+                },
+                function () {
+                    $(this).removeClass("hovered");
+                }
+            );
+            
+            // Прихований текст
+            $("#hide-text").hide();
+            $(".button").on("click", function () {
+                $("#hide-text").show(200);
+            });
+
+            // Завдання 3.1: Одинарний і подвійний клік для div
+            $("#clickable-div").on("click", function () {
+                $(this).css({
+                    "border": "2px solid blue",
+                    "background-color": "lightblue"
+                });
+            }).on("dblclick", function () {
+                $(this).css({
+                    "border": "",
+                    "background-color": ""
+                });
+            });
+
+            // Завдання 3.2: Обробка кнопок
+            $("#single-click").on("click", function () {
+                alert("Одинарний клік");
+            });
+            $("#double-click").on("dblclick", function () {
+                alert("Подвійний клік");
+            });
+
+            // Завдання 3.3: Показ/сховати зображення
+            $("#show-image").on("click", function () {
+                $("#image").fadeIn();
+            });
+            $("#image").on("click", function () {
+                $(this).fadeOut();
+            }).on("mouseover", function () {
+                $("#tooltip").fadeIn();
+            }).on("mouseout", function () {
+                $("#tooltip").fadeOut();
+            });
+
+            // Завдання 3.4: Перевірка введеного слова у формі
+            $("form").on("submit", function (e) {
+                e.preventDefault();
+                if ($("input[type='text']").val() === "correct") {
+                    $("#succeed-message").text("Correct!").fadeIn().fadeOut(2000);
+                } else {
+                    $("#error-message").text("Incorrect!").fadeIn().fadeOut(2000);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
