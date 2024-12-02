@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>lab11</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .container {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+        input, button {
+            margin: 10px 0;
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #bdc3c7;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        #result1, #result2, #result3, #result5 {
+            background-color: #ecf0f1;
+            border-left: 4px solid #3498db;
+            padding: 10px;
+            margin: 10px 0;
+            white-space: pre-wrap;
+        }
+        .filterDemo {
+            list-style-type: none;
+            padding: 0;
+        }
+        .filterDemo li {
+            padding: 5px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .highlight {
+            background-color: #f1c40f;
+            font-weight: bold;
+        }
+        .modified {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <a href="../index.html" class="button top-right-button">Go to lab list</a>
+    <div class="container">
+        <div id="task1">
+            <h2>Завдання 1: HTML, CSS, Val, Attr методи</h2>
+            <input id="nameInput" type="text" value="Initial Value" data-original="Default">
+            <div id="result1"></div>
+            <button id="demoBtn1">Демо методів</button>
+        </div>
+
+        <div id="task2">
+            <h2>Завдання 2: InsertBefore, Empty, Height, Width</h2>
+            <div id="container">
+                <p>Параграф для демонстрації</p>
+            </div>
+            <div id="result2"></div>
+            <button id="demoBtn2">Демо методів</button>
+        </div>
+
+        <div id="task3">
+            <h2>Завдання 3: Each, Next, PrevAll, Contents, NextUntil</h2>
+            <ul id="demoList">
+                <li>Перший</li>
+                <li>Другий</li>
+                <li>Третій</li>
+                <li>Четвертий</li>
+                <li>П'ятий</li>
+            </ul>
+            <div id="result3"></div>
+            <button id="demoBtn3">Демо методів</button>
+        </div>
+
+        <div id="task4">
+            <h2>Завдання 4: Filter, Modify Styles</h2>
+            <ul class="filterDemo">
+                <li>Елемент 1</li>
+                <li>Елемент 2</li>
+                <li>Елемент 3</li>
+                <li>Елемент 4</li>
+                <li>Елемент 5</li>
+                <li>Елемент 6</li>
+            </ul>
+            <button id="filterBtn">Застосувати фільтр</button>
+        </div>
+
+        <div id="task5">
+            <h2>Завдання 5: Utility Methods</h2>
+            <div id="arr"></div>
+            <div id="result5"></div>
+            <button id="utilBtn">Демо утилітних методів</button>
+        </div>
+    </div>
+
+    <script>
+    $(document).ready(function() {
+        // Завдання 1: HTML, CSS, Val, Attr Methods
+        $('#demoBtn1').click(function() {
+            let $input = $('#nameInput');
+            
+            $('#result1').html('<strong>HTML Method Demo</strong>');
+           
+            $input.css({
+                'border': '2px solid red',
+                'background-color': 'lightblue'
+            });
+            
+            console.log('Input value:', $input.val());
+            $input.val('Changed Value');
+    
+            console.log('Original attribute:', $input.attr('data-original'));
+            $input.attr('data-custom', 'New Attribute');
+            $input.attr('placeholder', function(index, currentValue) {
+                return 'Custom ' + currentValue;
+            });
+            
+            $input.removeAttr('data-original');
+        });
+
+        // Завдання 2: InsertBefore, Empty, Height, Width
+        $('#demoBtn2').click(function() {
+            let $container = $('#container');
+            
+            $('<div>Новий елемент</div>').insertBefore($container);
+            
+            $container.empty();
+            
+            let btn = $('<button>Розмір</button>');
+            btn.height(50);
+            btn.outerWidth(100);
+            $container.append(btn);
+            
+            $('#result2').text(`Width: ${btn.outerWidth()}px`);
+        });
+
+        // Завдання 3: Each, Next, PrevAll, Contents, NextUntil
+        $('#demoBtn3').click(function() {
+            let $list = $('#demoList');
+            let result = '';
+            
+            // .each()
+            $list.find('li').each(function(index) {
+                result += `Index ${index}: ${$(this).text()}\n`;
+            });
+            
+            // .next()
+            result += 'Next of first: ' + $list.find('li:first').next().text() + '\n';  
+            
+            // .prevAll()
+            result += 'PrevAll of last: ' + $list.find('li:last').prevAll().length + '\n';
+            
+            // .contents()
+            result += 'List contents count: ' + $list.contents().length + '\n';
+            
+            // .nextUntil()
+            result += 'Elements until third: ' + $list.find('li:first').nextUntil('li:eq(2)').length;
+            
+            $('#result3').text(result);
+        });
+
+        // Завдання 4: Filter
+        $('#filterBtn').click(function() {
+            $('.filterDemo li')
+                .filter('.filterDemo li:nth-child(3n)')
+                .addClass('highlight')
+                .append(' <span>modify</span>');
+        });
+
+        // Завдання 5: Utility Methods
+        $('#utilBtn').click(function() {
+            let arr = [1, 2, 3, 4, 5];
+            let obj = {};
+            let result = '';
+            
+            $("#arr").text("Array {" + arr + "}")
+            // $.grep()
+            let filteredArr = $.grep(arr, function(n) { return n > 2; });
+            result += `Grep result(n > 2): ${filteredArr}\n`;
+            
+            // $.inArray()
+            let index = $.inArray(3, arr);
+            result += `InArray value of 3rd element: ${index}\n`;
+            
+            // $.isArray()
+            result += `Is array: ${$.isArray(arr)}\n`;
+            
+            // $.isEmptyObject()
+            result += `Empty object: ${$.isEmptyObject(obj)}`;
+            
+            $('#result5').text(result);
+        });
+    });
+    </script>
+</body>
+</html>
