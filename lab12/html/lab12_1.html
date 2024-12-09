@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab12 Ex1</title>
+    <link rel="stylesheet" href="../../style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <a href="../lab12.html" class="button top-right-button">Go to lab12</a>
+    <div class="container">
+        <button id="fadeToBtn">Fade To 50%</button>
+        <button id="fadeToggleBtn">Fade Toggle</button>
+        <button id="delayBtn">Delay and Show</button>
+        <button id="slideToggleBtn">Slide Toggle</button>
+        <div class="box" id="box1"></div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            // .fadeTo()
+            $("#fadeToBtn").click(function () {
+                $("#box1").fadeTo(1000, 0.5)
+                          .delay(500)
+                          .fadeTo(1000, 1);
+            });
+
+            // .fadeToggle()
+            $("#fadeToggleBtn").click(function () {
+                $("#box1").fadeToggle(1000); 
+            });
+
+            // .delay() and .show()
+            $("#delayBtn").click(function () {
+                $("#box1")
+                    .fadeOut(500) 
+                    .delay(1000) 
+                    .fadeIn(500); 
+            });
+
+            // .slideToggle()
+            $("#slideToggleBtn").click(function () {
+                $("#box1").slideToggle(1000);
+            });
+        });
+    </script>
+</body>
+</html>

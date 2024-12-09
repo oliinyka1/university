@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab12 Ex2</title>
+    <link rel="stylesheet" href="../../style.css">
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(120deg, #4facfe, #00f2fe);
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+        #container {
+            text-align: center;
+            position: relative;
+        }
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+        .circle {
+            width: 100px;
+            height: 100px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            color: #fff;
+            text-align: center;
+        }
+        .square {
+            width: 70px;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.4);
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            transform: rotate(45deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #fff;
+            text-align: center;
+        }
+        .triangle {
+            width: 0;
+            height: 0;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            border-bottom: 60px solid rgba(255, 255, 255, 0.3);
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #fff;
+            text-align: center;
+        }
+        .triangle-text {
+            position: absolute;
+            transform: translate(0%, 110%);
+        }
+
+        .circle, .square, .triangle {
+            font-size: 150%;
+        }
+    </style>
+</head>
+<body>
+    <a href="../lab12.html" class="button top-right-button">Go to lab12</a>
+    
+    <div id="container">
+        <div class="circle">OOP</div>
+        <div class="logo">121<br>Інженерія програмного<br>забезпечення</div>
+        <div class="square">SQL</div>
+        <div class="triangle">
+            <div class="triangle-text">JS</div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const logo = document.querySelector(".logo");
+            const circle = document.querySelector(".circle");
+            const square = document.querySelector(".square");
+            const triangle = document.querySelector(".triangle");
+
+            // Logo
+            logo.animate(
+                [
+                    { transform: "translateY(0px) scale(1)", opacity: 1 },
+                    { transform: "translateY(-20px) scale(1.2)", opacity: 0.8 },
+                    { transform: "translateY(0px) scale(1)", opacity: 1 }
+                ],
+                {
+                    duration: 2000,
+                    easing: "ease-in-out",
+                    iterations: Infinity,
+                    direction: "alternate",
+                    delay: 500
+                }
+            );
+
+            // Circle
+            circle.animate(
+                [
+                    { transform: "scale(1)", opacity: 0.5 },
+                    { transform: "scale(1.5)", opacity: 1 },
+                    { transform: "scale(1)", opacity: 0.5 }
+                ],
+                {
+                    duration: 3000,
+                    easing: "ease-in-out",
+                    iterations: Infinity,
+                }
+            );
+
+            // Square
+            square.animate(
+                [
+                    { transform: "rotate(45deg) scale(1)", opacity: 0.7 },
+                    { transform: "rotate(0deg) scale(1.2)", opacity: 1 },
+                    { transform: "rotate(45deg) scale(1)", opacity: 0.7 }
+                ],
+                {
+                    duration: 2500,
+                    easing: "ease-in-out",
+                    iterations: Infinity,
+                }
+            );
+
+            // Triangle
+            triangle.animate(
+                [
+                    { transform: "translateX(0px)", opacity: 0.6 },
+                    { transform: "translateX(20px)", opacity: 1 },
+                    { transform: "translateX(0px)", opacity: 0.6 }
+                ],
+                {
+                    duration: 2000,
+                    easing: "ease-in-out",
+                    iterations: Infinity,
+                }
+            );
+        });
+    </script>
+</body>
+</html>
